@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honordle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>⚔️ ForHonorDle</h1>
+        <p>Guess today's For Honor hero</p>
+    </header>
+
+    <main>
+        <!-- Search box -->
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="search-input" 
+                placeholder="Type a hero name..." 
+                autocomplete="off"
+            />
+            <div id="dropdown" class="dropdown hidden"></div>
+        </div>
+
+        <button id="give-up-btn">Give Up</button>
+
+        <!-- Column headers -->
+        <div id="table-container" class="hidden">
+            <div class="grid-header">
+                <div class="cell">Hero</div>
+                <div class="cell">Faction</div>
+                <div class="cell">Gender</div>
+                <div class="cell">Type</div>
+                <div class="cell">Release</div>
+            </div>
+            <div id="guesses"></div>
+        </div>
+
+        <!-- Win/lose message -->
+        <div id="message" class="hidden"></div>
+    </main>
+
+    <script src="heroes.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

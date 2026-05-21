@@ -1,0 +1,199 @@
+/* ── Reset & base ───────────────────────────────────────────────── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 3rem;
+    letter-spacing: 6px;
+    color: #c8a84b;
+    text-shadow: 0 0 20px rgba(200, 168, 75, 0.4);
+}
+
+header p {
+    color: #888;
+    margin-top: 8px;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ── Search ─────────────────────────────────────────────────────── */
+main {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1rem;
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #f0f0f0;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#search-input:focus {
+    border-color: #c8a84b;
+}
+
+/* ── Dropdown ───────────────────────────────────────────────────── */
+.dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    z-index: 100;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-size: 0.95rem;
+}
+
+.dropdown-item:hover {
+    background: #2a2a2a;
+    color: #c8a84b;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ── Give up button ─────────────────────────────────────────────── */
+#give-up-btn {
+    padding: 10px 28px;
+    background: transparent;
+    border: 2px solid #555;
+    border-radius: 8px;
+    color: #888;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#give-up-btn:hover {
+    border-color: #c0392b;
+    color: #c0392b;
+}
+
+/* ── Grid ───────────────────────────────────────────────────────── */
+#table-container {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.grid-header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.grid-header .cell {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    padding: 8px;
+}
+
+/* ── Guess rows ─────────────────────────────────────────────────── */
+.guess-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.guess-row .cell {
+    padding: 16px 8px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #1a1a1a;
+    color: #f0f0f0;
+    opacity: 1;
+    transition: background 0.3s;
+    animation: flipIn 0.4s ease forwards;
+}
+
+.cell.correct {
+    background: #2d6a2d !important;
+    color: #fff !important;
+}
+
+.cell.wrong {
+    background: #9c0000 !important;
+    color: #888 !important;
+}
+
+@keyframes flipIn {
+    from { transform: scaleY(0); opacity: 0; }
+    to   { transform: scaleY(1); opacity: 1; }
+}
+
+/* ── Message ────────────────────────────────────────────────────── */
+#message {
+    margin-top: 20px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+#message.win {
+    background: #2d6a2d;
+    color: #fff;
+}
+
+#message.lose {
+    background: #6a2d2d;
+    color: #fff;
+}
